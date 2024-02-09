@@ -1,5 +1,4 @@
 //auth , isStudent, isAdmin , isVisitor
-
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -9,7 +8,7 @@ exports.auth = (req,res,next) =>{
         //Type : 1 [Directly From Req's Body]
         const token = req.body.token;
         //Type : 2 [From Cookie]
-        //const token = req.cookies.token 
+        // const token = req.cookies.token 
         //Type : 2 [From Header File]
         //const token = req.header('Authorization).replace('Bearer ','');
         

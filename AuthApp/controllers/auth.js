@@ -75,20 +75,20 @@ exports.logIn = async(req,res) =>{
         if(!user){
             return res.status(400).json({
                 success : false,
-                message : 'User Not exist so p[lease Signup First'
+                message : 'User Not exist so Please Signup First'
             })
         }
         //If user is Present in DB
         //Now check whether the Password is matching or not
         //If Matched
         if(await bcrypt.compare(password,user.password)){
-            const payload = {
+            const abhishek = {
                 email : user.email,
                 id : user._id,
                 role : user.role
             }
             //create Token
-            const token = jwt.sign(payload,process.env.JWT_SECRET,{
+            const token = jwt.sign(abhishek,process.env.JWT_SECRET,{
                 expiresIn : '2h'
             })
             user.token = token;
